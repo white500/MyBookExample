@@ -40,6 +40,7 @@
         "description": "用于学习WebGL编程指南快速生成Html模版"
     },
     "WebGL Main": {
+        "scope": "javascript",
         "prefix": "glmain",
         "body": [
             "function main() {",
