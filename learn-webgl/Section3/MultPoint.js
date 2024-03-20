@@ -52,23 +52,23 @@ function initVertexBuffers(gl) {
     let vertices = new Float32Array([
         0.0,0.5,-0.5,-0.5,0.5,-0.5
     ])
-
     var n = 3;
-    // 创建缓冲区对象
+    // todo1 创建缓冲区对象
     const vertexBuffer = gl.createBuffer();
     if (!vertexBuffer) {
         console.log('Failed to create the buffer object');
         return -1
     }
 
-    // 将缓冲去对象绑定到目标
+    // todo2 将缓冲去对象绑定到目标
     gl.bindBuffer(gl.ARRAY_BUFFER, vertexBuffer);
-    // 向缓冲区对象中写入数据
+    // todo3 向缓冲区对象中写入数据
     gl.bufferData(gl.ARRAY_BUFFER, vertices, gl.STATIC_DRAW);
     const a_Position = gl.getAttribLocation(gl.program, 'a_Position');
-    // 将缓冲区对象分配给a_Position变量
+    // todo4 将缓冲区对象分配给a_Position变量
     gl.vertexAttribPointer(a_Position, 2, gl.FLOAT, false, 0, 0);
-    //连接a_Position变量与分配给它的缓冲区对象
+    // todo5 连接a_Position变量与分配给它的缓冲区对象
     gl.enableVertexAttribArray(a_Position);
+
     return n;
 }
